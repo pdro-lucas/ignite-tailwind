@@ -11,14 +11,16 @@ export function Profile() {
         alt="User profile image"
       />
 
-      <div className="flex flex-1 flex-col truncate">
-        <span className="text-sm font-semibold text-zinc-700">Pedro Lucas</span>
-        <span className="truncate text-sm text-zinc-500 ">
+      <div className="flex flex-col flex-1 truncate">
+        <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-100">
+          Pedro Lucas
+        </span>
+        <span className="text-sm truncate text-zinc-500 dark:text-zinc-400">
           contato@pedrolucas.com
         </span>
       </div>
       <Button type="button" variant="ghost">
-        <LogOut className="h-5 w-5 text-zinc-500" />
+        <LogOut className="w-5 h-5" />
       </Button>
     </div>
   );

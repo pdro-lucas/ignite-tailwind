@@ -5,15 +5,7 @@ import { SelectItem } from "@/components/Form/Select/SelectItem";
 import { TextArea } from "@/components/Form/TextArea";
 import { Input } from "@/components/Input";
 import { SettingsTabs } from "@/components/SettingsTabs";
-import {
-  Bold,
-  ChevronDown,
-  Italic,
-  Link,
-  List,
-  ListOrdered,
-  Mail,
-} from "lucide-react";
+import { Bold, Italic, Link, List, ListOrdered, Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -23,7 +15,7 @@ export default function Home() {
       <SettingsTabs />
 
       <div className="flex flex-col mt-6">
-        <div className="flex items-center justify-between pb-5 border-b border-zinc-200">
+        <div className="flex flex-col justify-between gap-4 pb-5 border-b lg:items-center lg:flex-row border-zinc-200">
           <div className="space-y-1 ">
             <h2 className="text-lg font-medium text-zinc-900">Personal info</h2>
             <span className="text-sm text-zinc-500">
@@ -43,26 +35,38 @@ export default function Home() {
           id="settings"
           className="flex flex-col w-full gap-5 mt-6 divide-y divide-zinc-200"
         >
-          <div className="grid gap-3 grid-cols-form">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
               htmlFor="firstName"
               className="text-sm font-medium text-zinc-700"
             >
               Name
             </label>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
               <Input.Root>
                 <Input.Control
                   id="firstName"
-                  defaultValue="Pedro Lucas"
+                  defaultValue="Pedro"
                 ></Input.Control>
               </Input.Root>
-              <Input.Root>
-                <Input.Control defaultValue="Pedro Lucas"></Input.Control>
-              </Input.Root>
+
+              <div className="flex flex-col gap-3 lg:block">
+                <label
+                  htmlFor="lastName"
+                  className="text-sm font-medium text-zinc-700 lg:sr-only"
+                >
+                  Last Name
+                </label>
+                <Input.Root>
+                  <Input.Control
+                    id="lastName"
+                    defaultValue="Lucas"
+                  ></Input.Control>
+                </Input.Root>
+              </div>
             </div>
           </div>
-          <div className="grid gap-3 pt-5 grid-cols-form">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label
               htmlFor="email"
               className="text-sm font-medium text-zinc-700"
@@ -80,7 +84,7 @@ export default function Home() {
               ></Input.Control>
             </Input.Root>
           </div>
-          <div className="grid gap-3 pt-5 grid-cols-form">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label
               htmlFor="photo"
               className="text-sm font-medium text-zinc-700"
@@ -90,13 +94,13 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <FileInput.Root className="flex items-start gap-5">
+            <FileInput.Root className="flex flex-col gap-5 lg:items-start lg:flex-row">
               <FileInput.ImagePreview />
               <FileInput.Trigger />
               <FileInput.Control />
             </FileInput.Root>
           </div>
-          <div className="grid gap-3 pt-5 grid-cols-form">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label htmlFor="role" className="text-sm font-medium text-zinc-700">
               Role
             </label>
@@ -104,7 +108,7 @@ export default function Home() {
               <Input.Control id="role" defaultValue="CTO"></Input.Control>
             </Input.Root>
           </div>
-          <div className="grid gap-3 pt-5 grid-cols-form">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label
               htmlFor="country"
               className="text-sm font-medium text-zinc-700"
@@ -116,7 +120,7 @@ export default function Home() {
               <SelectItem value="us" text="United States" />
             </Select>
           </div>
-          <div className="grid gap-3 pt-5 grid-cols-form">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label
               htmlFor="timezone"
               className="text-sm font-medium text-zinc-700"
@@ -131,7 +135,7 @@ export default function Home() {
               <SelectItem value="utc3" text="America São Paulo (UTC-03:00)" />
             </Select>
           </div>
-          <div className="grid gap-3 pt-5 grid-cols-form">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
               Bio
               <span className="text-sm mt-0.5 font-normal text-zinc-500 block">
@@ -139,7 +143,7 @@ export default function Home() {
               </span>
             </label>
             <div className="space-y-3">
-              <div className="grid gap-3 grid-cols-2">
+              <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2">
                 <Select placeholder="" defaultValue="normal">
                   <SelectItem
                     value="normal"
@@ -150,20 +154,20 @@ export default function Home() {
                 </Select>
                 <div className="flex items-center gap-1 ">
                   <Button type="button" variant="ghost">
-                    <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                    <Bold className="w-4 h-4 text-zinc-500" strokeWidth={3} />
                   </Button>
                   <Button type="button" variant="ghost">
-                    <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                    <Italic className="w-4 h-4 text-zinc-500" strokeWidth={3} />
                   </Button>
                   <Button type="button" variant="ghost">
-                    <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                    <Link className="w-4 h-4 text-zinc-500" strokeWidth={3} />
                   </Button>
                   <Button type="button" variant="ghost">
-                    <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                    <List className="w-4 h-4 text-zinc-500" strokeWidth={3} />
                   </Button>
                   <Button type="button" variant="ghost">
                     <ListOrdered
-                      className="h-4 w-4 text-zinc-500"
+                      className="w-4 h-4 text-zinc-500"
                       strokeWidth={3}
                     />
                   </Button>
@@ -176,7 +180,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="grid gap-3 pt-5 grid-cols-form">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label
               htmlFor="portfolio"
               className="text-sm font-medium text-zinc-700"

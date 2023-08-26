@@ -22,7 +22,7 @@ import { UsedSpaceWidget } from "./UsedSpaceWidget";
 
 export function Sidebar() {
   return (
-    <Collapsible.Root className="fixed top-0 data-[state=open]:bottom-0 lg:data-[state=closed]:bottom-0 left-0 right-0 z-20 flex flex-col gap-6 p-4 bg-white border-b border-zinc-200 lg:right-auto lg:w-80 lg:border-r lg:px-5 lg:py-8">
+    <Collapsible.Root className="fixed top-0 data-[state=open]:bottom-0 lg:data-[state=closed]:bottom-0 left-0 right-0 z-20 flex flex-col gap-6 p-4 bg-white border-b border-zinc-200 lg:right-auto lg:w-80 lg:border-r lg:px-5 lg:py-8 dark:bg-zinc-900 dark:border-zinc-800">
       <div className="flex items-center justify-between">
         <Logo />
         <Collapsible.Trigger className="lg:hidden" asChild>
@@ -60,7 +60,7 @@ export function Sidebar() {
 
           <UsedSpaceWidget />
 
-          <div className="h-px bg-zinc-200"></div>
+          <div className="h-px bg-zinc-200 dark:bg-zinc-800"></div>
 
           <Profile />
         </div>
