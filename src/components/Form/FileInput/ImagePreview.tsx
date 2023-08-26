@@ -1,8 +1,8 @@
 "use client";
 
 import { User } from "lucide-react";
-import { useFileInput } from "./Root";
 import { useMemo } from "react";
+import { useFileInput } from "./Root";
 
 export function ImagePreview() {
   const { files } = useFileInput();
@@ -15,8 +15,8 @@ export function ImagePreview() {
 
   if (previewURL === null) {
     return (
-      <div className="bg-violet-50 flex h-16 w-16 items-center rounded-full justify-center">
-        <User className="w-8 h-8 text-violet-500" />
+      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-violet-50 dark:bg-violet-500/10">
+        <User className="w-8 h-8 text-violet-500 dark:text-violet-400" />
       </div>
     );
   } else {
@@ -24,7 +24,7 @@ export function ImagePreview() {
       <img
         src={previewURL}
         alt=""
-        className="h-16 w-16 rounded-full object-cover"
+        className="object-cover w-16 h-16 rounded-full"
       />
     );
   }
