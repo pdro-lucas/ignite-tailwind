@@ -1,7 +1,7 @@
 import { Sidebar } from "@/components/Sidebar";
-import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased">
       <body className={inter.className}>
-        <div className="grid min-h-screen grid-cols-app">
+        <div className="min-h-screen lg:grid lg:grid-cols-app">
           <Sidebar />
-          <main className="px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pb-12 lg:pt-8">
+          <main className="px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pb-12 lg:pt-8 max-w-s">
             {children}
           </main>
         </div>
